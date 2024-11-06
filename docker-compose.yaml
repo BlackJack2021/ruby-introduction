@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+    ruby:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: ruby
+        volumes:
+            - .:/app
+        ports:
+            - "3000:3000"
+        stdin_open: true # 標準入力を開く
+        tty: true # 疑似ターミナルを割り当てる
