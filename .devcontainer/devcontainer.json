@@ -1,0 +1,17 @@
+{
+    "name": "Ruby Development Container",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": ["Shopify.rubyLsp", "seatonjiang.gitmoji-vscode"],
+            "settings": {
+                "editor.fontSize": 14,
+                "editor.tabSize": 4,
+                "rubyLsp": true
+            }
+        }
+    }
+}

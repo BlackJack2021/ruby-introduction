@@ -3,7 +3,7 @@ version: "3.8"
 services:
     ruby:
         build:
-            context: .
+            context: .devcontainer
             dockerfile: Dockerfile
         container_name: ruby
         volumes:
