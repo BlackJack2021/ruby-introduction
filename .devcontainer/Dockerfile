@@ -14,7 +14,9 @@ WORKDIR /app
 
 # -qq は出力を減らすためのコマンド
 # nodejs は Ruby on Rails でフロントエンドのアセット管理をする際に必要になるケースがある
-RUN apt-get update -qq && apt-get install -y nodejs
+RUN apt-get update -qq \
+    && apt-get install -y nodejs \
+    && apt-get install -y zsh curl vim
 
 # プロジェクトの基本情報や依存関係をセット記述したファイル(Gemfile, Gemfile.lock) をコピー
 #COPY Gemfile* ./
@@ -29,6 +31,9 @@ RUN chown -R ${USER_NAME}:${USER_NAME} //app
 
 # 作成したユーザーへの切り替えを行う
 USER ${USER_NAME}
+
+# 切り替えたユーザーの環境で oh-my-zsh をインストール
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # Ruby の対話的な実行環境を起動
 CMD ["irb"]

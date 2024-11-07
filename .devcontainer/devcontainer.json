@@ -7,14 +7,18 @@
     "customizations": {
         "vscode": {
             "extensions": ["Shopify.rubyLsp", "seatonjiang.gitmoji-vscode"],
+            "remoteUser": "vscode",
             "settings": {
                 "editor.fontSize": 14,
                 "editor.tabSize": 4,
-                "rubyLsp": true
+                "rubyLsp": true,
+                "terminal.integrated.shell.linux": "/bin/zsh"
             }
         }
     },
     "mounts": [
-        "source=${env:HOME}/.ssh,target=/app/.ssh,type=bind"
-    ]
+        "source=${env:HOME}/.ssh,target=/auth/.ssh,type=bind",
+        "source=${localWorkspaceFolder},target=/app/,type=bind"
+    ],
+    "postCreateCommand": "sed -i 's/ZSH_THEME=\".*\"/ZSH_THEME=\"crcandy\"/' ~/.zshrc && exec zsh"
 }
