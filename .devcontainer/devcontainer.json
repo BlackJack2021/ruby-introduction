@@ -6,13 +6,15 @@
     },
     "customizations": {
         "vscode": {
-            "extensions": ["Shopify.rubyLsp", "seatonjiang.gitmoji-vscode"],
+            "extensions": ["Shopify.rubyLsp", "seatonjiang.gitmoji-vscode", "Castwide.solargraph"],
             "remoteUser": "vscode",
             "settings": {
                 "editor.fontSize": 14,
                 "editor.tabSize": 4,
-                "rubyLsp": true,
-                "terminal.integrated.shell.linux": "/bin/zsh"
+                "rubyEsp.enabled": true,
+                "terminal.integrated.shell.linux": "/bin/zsh",
+                "solargraph.useBundler": true,
+                "solargraph.bundlerPath": "bundle"
             }
         }
     },
@@ -20,5 +22,6 @@
         "source=${env:HOME}/.ssh,target=/auth/.ssh,type=bind",
         "source=${localWorkspaceFolder},target=/app/,type=bind"
     ],
-    "postCreateCommand": "sed -i 's/ZSH_THEME=\".*\"/ZSH_THEME=\"crcandy\"/' ~/.zshrc && exec zsh"
+    "postCreateCommand": "bundle install && solargraph download-core && sed -i 's/ZSH_THEME=\".*\"/ZSH_THEME=\"crcandy\"/' ~/.zshrc && exec zsh",
+    "remoteUser": "blackjack"
 }

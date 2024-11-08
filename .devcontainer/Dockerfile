@@ -22,12 +22,12 @@ RUN apt-get update -qq \
 COPY Gemfile* ./
 
 # gem は pip, bundler は poetry のイメージ
-#RUN gem install bundler && bundle install
+RUN gem install bundler && bundle install
 
 COPY . .
 
 # ファイルの所有者を変更する
-RUN chown -R ${USER_NAME}:${USER_NAME} //app
+RUN chown -R ${USER_NAME}:${USER_NAME} /app
 
 # 作成したユーザーへの切り替えを行う
 USER ${USER_NAME}
