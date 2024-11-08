@@ -19,7 +19,7 @@ RUN apt-get update -qq \
     && apt-get install -y zsh curl vim
 
 # プロジェクトの基本情報や依存関係をセット記述したファイル(Gemfile, Gemfile.lock) をコピー
-#COPY Gemfile* ./
+COPY Gemfile* ./
 
 # gem は pip, bundler は poetry のイメージ
 #RUN gem install bundler && bundle install

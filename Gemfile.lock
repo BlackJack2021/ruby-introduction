@@ -1,0 +1,12 @@
+GEM
+  specs:
+    minitest (5.14.2)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  minitest (~> 5.14.0)
+
+BUNDLED WITH
+   2.2.33
