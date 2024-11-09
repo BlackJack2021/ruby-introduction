@@ -22,7 +22,7 @@ eval "$(ssh-agent -s)"
 2. 認証に利用する秘密鍵を登録する。今回は /auth/.ssh にキーをマウントする構成を取っているため、例えば `id_rsa` が秘密鍵であれば、
 
 ```
-ssh-add ~/.ssh/id_rsa
+ssh-add /auth/.ssh/id_rsa
 ```
 
 とすることで github への SSH 認証を正しく行うことができます。
