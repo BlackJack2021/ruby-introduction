@@ -14,7 +14,8 @@
                 "rubyEsp.enabled": true,
                 "terminal.integrated.shell.linux": "/bin/zsh",
                 "solargraph.useBundler": true,
-                "solargraph.bundlerPath": "bundle"
+                "solargraph.bundlerPath": "/usr/local/bin/bundle",
+                "solargraph.completion": true
             }
         }
     },
@@ -22,6 +23,5 @@
         "source=${env:HOME}/.ssh,target=/auth/.ssh,type=bind",
         "source=${localWorkspaceFolder},target=/app/,type=bind"
     ],
-    "postCreateCommand": "bundle install && solargraph download-core && sed -i 's/ZSH_THEME=\".*\"/ZSH_THEME=\"crcandy\"/' ~/.zshrc && exec zsh",
-    "remoteUser": "blackjack"
+    "postCreateCommand": "bundle install && solargraph download-core && sed -i 's/ZSH_THEME=\".*\"/ZSH_THEME=\"crcandy\"/' ~/.zshrc && exec zsh"
 }

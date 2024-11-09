@@ -17,6 +17,10 @@ formatter:
     except: []
     only: []
     extra_args: []
-require_paths: []
+require_paths:
+  - contents
 plugins: []
 max_files: 5000
+
+solargraph:
+  
