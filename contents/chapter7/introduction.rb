@@ -68,3 +68,48 @@ end
 user = User.new('Alice')
 user
 
+# クラスメソッドを定義する
+class User
+    def initialize(name)
+        @name = name
+    end
+
+    # self. をつけるとクラスメソッド
+    def self.create_users(names)
+        names.map do |name|
+            User.new(name)
+        end
+    end
+
+    def hello
+        "Hello, I am #{@name}."
+    end
+end
+
+names = ['Alice', 'Bob', 'Carol']
+users = User.create_users(names)
+users.each do |user|
+    puts user.hello
+end
+
+class Product
+    # 定数。クラスメソッドからでもインスタンスメソッドからでもアクセスできる
+    DEFAULT_PRICE = 0
+
+    def self.default_price
+        DEFAULT_PRICE
+    end
+
+    def default_price
+        DEFAULT_PRICE
+    end
+end
+
+# クラスメソッドの呼び出し
+puts Product.default_price
+# インスタンスメソッドの呼び出し
+product = Product.new
+puts product.default_price
+
+
+    
