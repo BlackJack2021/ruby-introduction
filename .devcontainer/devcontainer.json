@@ -6,7 +6,12 @@
     },
     "customizations": {
         "vscode": {
-            "extensions": ["Shopify.rubyLsp", "seatonjiang.gitmoji-vscode", "Castwide.solargraph"],
+            "extensions": [
+                "Shopify.rubyLsp",
+                "seatonjiang.gitmoji-vscode",
+                "Castwide.solargraph",
+                "Shopify.ruby-extensions-pack"
+            ],
             "remoteUser": "vscode",
             "settings": {
                 "editor.fontSize": 14,
