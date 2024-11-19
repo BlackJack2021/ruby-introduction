@@ -3,8 +3,7 @@ require_relative '../lib/rainbowable'
 
 class RainbowableTest < Minitest::Test
   def setup
-    String.include Rainbowable
-    Array.include Rainbowable
+    Object.include Rainbowable
   end
 
   def test_rainbow
@@ -17,5 +16,7 @@ class RainbowableTest < Minitest::Test
     # ターミナルに表示して確かめ
     puts 'Hello, world!'.rainbow
     puts [1, 2, 3].rainbow
+    puts true.rainbow
+    puts false.rainbow
   end
 end
